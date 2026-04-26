@@ -23,8 +23,9 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 
 # Site Configuration
-VITE_SITE_URL=https://your-domain.vercel.app
-VITE_WHATSAPP_NUMBER=+234XXXXXXXXXX
+VITE_SITE_URL=https://www.bhsibadan.ng
+VITE_CONTACT_EMAIL=info@bhsibadan.ng
+VITE_WHATSAPP_NUMBER=+2348027585609
 ```
 
 ## Database Setup
@@ -79,8 +80,9 @@ Add these in your Vercel project settings → Environment Variables:
 
 - `VITE_SUPABASE_URL` - Your Supabase project URL
 - `VITE_SUPABASE_ANON_KEY` - Your Supabase anonymous key
-- `VITE_SITE_URL` - Your production URL (e.g., https://blossom.vercel.app)
-- `VITE_WHATSAPP_NUMBER` - School WhatsApp contact number
+- `VITE_SITE_URL` - Your production URL (https://www.bhsibadan.ng)
+- `VITE_CONTACT_EMAIL` - Contact email (info@bhsibadan.ng)
+- `VITE_WHATSAPP_NUMBER` - School WhatsApp contact number (+2348027585609)
 
 ## Post-Deployment Checklist
 
