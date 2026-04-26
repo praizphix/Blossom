@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import db from '../services/database';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Admissions = () => {
   const [formData, setFormData] = useState({
@@ -683,6 +685,7 @@ const Admissions = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

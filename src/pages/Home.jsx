@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HeroSlider from '../components/HeroSlider';
 import OptimizedImage from '../components/OptimizedImage';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 import { 
   fadeInUp, 
   fadeInLeft, 
@@ -16,7 +18,9 @@ import {
 
 const Home = () => {
   return (
-    <div>
+    <>
+      <SEO {...seoConfig.home} />
+      <div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -542,6 +546,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

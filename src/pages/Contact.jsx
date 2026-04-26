@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import db from '../services/database';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +54,8 @@ const Contact = () => {
   };
 
   return (
+    <>
+      <SEO {...seoConfig.contact} />
     <main className="pt-12 pb-xl">
       {/* Hero Section / Title */}
       <div className="max-w-container-max mx-auto px-8 mb-xl text-center">
@@ -310,6 +314,7 @@ const Contact = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 

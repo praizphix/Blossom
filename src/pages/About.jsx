@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import studentsTeamwork from '../assets/images/students-teamwork.png';
 import { Link } from 'react-router-dom';
 import OptimizedImage from '../components/OptimizedImage';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 import {
   fadeInUp,
   fadeInLeft,
@@ -15,7 +17,9 @@ import {
 
 const About = () => {
   return (
-    <div>
+    <>
+      <SEO {...seoConfig.about} />
+      <div>
       {/* Hero Section */}
       <section className="relative h-[614px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -259,6 +263,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

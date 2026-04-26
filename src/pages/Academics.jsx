@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import studentsTeamwork from '../assets/images/students-teamwork.png';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Academics = () => {
   return (
-    <div>
+    <>
+      <SEO {...seoConfig.academics} />
+      <div>
       {/* Hero Section */}
       <header className="relative pt-12 pb-24 overflow-hidden">
         <div className="max-w-container-max mx-auto px-8">
@@ -319,6 +323,7 @@ const Academics = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
