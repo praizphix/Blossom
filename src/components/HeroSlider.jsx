@@ -101,10 +101,10 @@ const HeroSlider = () => {
       {slides.length > 1 && (
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 group"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 group"
           aria-label="Previous slide"
         >
-          <span className="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">
+          <span className="material-symbols-outlined text-2xl sm:text-3xl group-hover:scale-110 transition-transform">
             chevron_left
           </span>
         </button>
@@ -114,10 +114,10 @@ const HeroSlider = () => {
       {slides.length > 1 && (
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 group"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 group"
           aria-label="Next slide"
         >
-          <span className="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">
+          <span className="material-symbols-outlined text-2xl sm:text-3xl group-hover:scale-110 transition-transform">
             chevron_right
           </span>
         </button>
@@ -125,15 +125,15 @@ const HeroSlider = () => {
 
       {/* Navigation Dots */}
       {slides.length > 1 && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-30">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-3 z-30">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
                 index === currentSlide 
-                  ? 'bg-white w-8' 
-                  : 'bg-white/40 hover:bg-white/60 w-2'
+                  ? 'bg-white w-6 sm:w-8' 
+                  : 'bg-white/40 hover:bg-white/60 w-1.5 sm:w-2'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

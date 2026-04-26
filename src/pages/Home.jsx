@@ -27,7 +27,7 @@ const Home = () => {
           <HeroSlider />
         </div>
         
-        <div className="relative z-10 max-w-container-max mx-auto px-8 py-xl">
+        <div className="relative z-10 max-w-container-max mx-auto px-4 sm:px-8 py-xl">
           <motion.div 
             className="max-w-3xl space-y-md"
             initial="hidden"
@@ -35,60 +35,60 @@ const Home = () => {
             variants={staggerContainer}
           >
             <motion.span 
-              className="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container font-label-md rounded-full"
+              className="inline-block px-3 sm:px-4 py-1.5 bg-secondary-container text-on-secondary-container text-sm sm:text-base font-label-md rounded-full"
               variants={fadeInUp}
             >
               Excellence in Education
             </motion.span>
             <motion.h1 
-              className="text-white font-display-xl leading-tight"
+              className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display-xl leading-tight"
               variants={fadeInUp}
             >
               Nurturing Excellence, Raising Future Leaders
             </motion.h1>
             <motion.p 
-              className="text-white/90 text-body-lg max-w-2xl"
+              className="text-white/90 text-base sm:text-lg md:text-xl text-body-lg max-w-2xl"
               variants={fadeInUp}
             >
               Blossom High School is committed to academic excellence, character development, discipline, and innovation—preparing every child for a successful future.
             </motion.p>
             <motion.div 
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4"
               variants={fadeInUp}
             >
               <Link 
                 to="/admissions"
-                className="px-8 py-4 bg-tertiary-container text-white font-headline-sm rounded-xl hover:scale-[1.02] transition-transform shadow-lg"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-tertiary-container text-white text-center text-sm sm:text-base font-headline-sm rounded-xl hover:scale-[1.02] transition-transform shadow-lg"
               >
                 Apply for Admission
               </Link>
               <Link 
                 to="/contact"
-                className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-headline-sm rounded-xl hover:bg-white/20 transition-all"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white text-center text-sm sm:text-base font-headline-sm rounded-xl hover:bg-white/20 transition-all"
               >
                 Book a School Tour
               </Link>
             </motion.div>
             
             <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-xl"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 sm:pt-xl"
               variants={staggerContainer}
             >
-              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
-                <span className="material-symbols-outlined text-secondary-fixed text-3xl">school</span>
-                <span className="font-label-md">Experienced Teachers</span>
+              <motion.div className="flex items-center gap-2 sm:gap-3 text-white/90" variants={staggerItem}>
+                <span className="material-symbols-outlined text-secondary-fixed text-2xl sm:text-3xl">school</span>
+                <span className="text-xs sm:text-sm md:text-base font-label-md">Experienced Teachers</span>
               </motion.div>
-              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
-                <span className="material-symbols-outlined text-secondary-fixed text-3xl">shield_person</span>
-                <span className="font-label-md">Safe Environment</span>
+              <motion.div className="flex items-center gap-2 sm:gap-3 text-white/90" variants={staggerItem}>
+                <span className="material-symbols-outlined text-secondary-fixed text-2xl sm:text-3xl">shield_person</span>
+                <span className="text-xs sm:text-sm md:text-base font-label-md">Safe Environment</span>
               </motion.div>
-              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
-                <span className="material-symbols-outlined text-secondary-fixed text-3xl">computer</span>
-                <span className="font-label-md">Modern Learning</span>
+              <motion.div className="flex items-center gap-2 sm:gap-3 text-white/90" variants={staggerItem}>
+                <span className="material-symbols-outlined text-secondary-fixed text-2xl sm:text-3xl">computer</span>
+                <span className="text-xs sm:text-sm md:text-base font-label-md">Modern Learning</span>
               </motion.div>
-              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
-                <span className="material-symbols-outlined text-secondary-fixed text-3xl">workspace_premium</span>
-                <span className="font-label-md">Strong Moral Values</span>
+              <motion.div className="flex items-center gap-2 sm:gap-3 text-white/90" variants={staggerItem}>
+                <span className="material-symbols-outlined text-secondary-fixed text-2xl sm:text-3xl">workspace_premium</span>
+                <span className="text-xs sm:text-sm md:text-base font-label-md">Strong Moral Values</span>
               </motion.div>
             </motion.div>
           </motion.div>
