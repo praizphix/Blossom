@@ -1,6 +1,17 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import studentsTeamwork from '../assets/images/students-teamwork.png';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  staggerItem,
+  scaleIn,
+  viewportSettings
+} from '../utils/animations';
 
 const About = () => {
   return (
@@ -12,43 +23,77 @@ const About = () => {
             className="w-full h-full object-cover" 
             alt="Blossom High School students"
             src={studentsTeamwork}
+            loading="eager"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-primary/40 backdrop-brightness-75"></div>
         </div>
-        <div className="relative z-10 text-center px-4 max-w-4xl">
-          <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-label-md uppercase tracking-widest">
+        <motion.div 
+          className="relative z-10 text-center px-4 max-w-4xl"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.span 
+            className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-label-md uppercase tracking-widest"
+            variants={fadeInUp}
+          >
             Est. 1994
-          </span>
-          <h1 className="text-white font-display-xl mb-6 leading-tight">
+          </motion.span>
+          <motion.h1 
+            className="text-white font-display-xl mb-6 leading-tight"
+            variants={fadeInUp}
+          >
             About Blossom High School
-          </h1>
-          <p className="text-white/90 font-body-lg max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p 
+            className="text-white/90 font-body-lg max-w-2xl mx-auto"
+            variants={fadeInUp}
+          >
             Cultivating excellence, nurturing integrity, and preparing world-class leaders since our founding.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </section>
 
       {/* Why We Exist Section */}
       <section className="py-xl px-8 bg-surface-container-lowest">
         <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={fadeInLeft}
+          >
             <div className="absolute -top-4 -left-4 w-32 h-32 bg-secondary-container rounded-full mix-blend-multiply filter blur-2xl opacity-20"></div>
-            <img 
+            <OptimizedImage
               className="rounded-[2rem] shadow-2xl relative z-10 aspect-[4/3] object-cover" 
               alt="Diverse group of students engaged in collaborative study in a modern glass-walled library with warm ambient lighting"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSr34CKo1uH6U9iC8j4VchdSbP9DSUKl5qi6pwYDpHdcljGaVL44N2-qlqFZU-zpFEHhtkATzilJ5RDXskUDv4O5IlOsJKbuKfFpFPKr4AO1FnZCou_sq5T7VXNq_LTSfr6kTbLEpcyyom0IyzfewyE-4tKkxmt81gunaPEVvyzCpYlDykhKlh8o4fRQh9Biu5yuHPlWqa3d1Ru2Xk163dm_B_WE6a1EjR70Jajx89hvn7a1TEEKxadZTgfo366-bHciYbyh_b"
             />
-            <div className="absolute -bottom-8 -right-8 p-8 bg-white rounded-2xl shadow-xl z-20 border-l-4 border-tertiary-container">
+            <motion.div 
+              className="absolute -bottom-8 -right-8 p-8 bg-white rounded-2xl shadow-xl z-20 border-l-4 border-tertiary-container"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={viewportSettings}
+              transition={{ delay: 0.3 }}
+            >
               <p className="font-headline-sm text-primary italic">"Education is the blooming of a soul."</p>
-            </div>
-          </div>
-          <div className="space-y-8">
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            className="space-y-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={fadeInRight}
+          >
             <div className="inline-block px-4 py-1 rounded-full bg-surface-container text-primary font-label-md">
               Our Purpose
             </div>
             <h2 className="font-display-lg text-primary">Why We Exist</h2>
             <p className="text-on-surface-variant font-body-lg">
-              At Blossom High School, we believe that every child possesses a unique brilliance waiting to be discovered. We exist to provide more than just a curriculum; we provide a sanctuary for intellectual curiosity and character development.
+              At Blossom High School, we believe that every child possesses a unique brilliance waiting to be discovered. We provide more than just a curriculum; we provide a sanctuary for intellectual curiosity and character development.
             </p>
             <p className="text-on-surface-variant font-body-lg">
               Our mission is rooted in the understanding that a supportive, inclusive environment is the catalyst for true growth. We have built an ecosystem where students feel safe to take risks, encouraged to lead, and inspired to serve.
@@ -61,7 +106,7 @@ const About = () => {
                 Schedule a Tour
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

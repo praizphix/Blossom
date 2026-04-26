@@ -1,6 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import HeroSlider from '../components/HeroSlider';
+import OptimizedImage from '../components/OptimizedImage';
+import { 
+  fadeInUp, 
+  fadeInLeft, 
+  fadeInRight, 
+  staggerContainer, 
+  staggerItem,
+  scaleIn,
+  cardHover,
+  viewportSettings
+} from '../utils/animations';
 
 const Home = () => {
   return (
@@ -12,17 +24,34 @@ const Home = () => {
         </div>
         
         <div className="relative z-10 max-w-container-max mx-auto px-8 py-xl">
-          <div className="max-w-3xl space-y-md">
-            <span className="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container font-label-md rounded-full">
+          <motion.div 
+            className="max-w-3xl space-y-md"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.span 
+              className="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container font-label-md rounded-full"
+              variants={fadeInUp}
+            >
               Excellence in Education
-            </span>
-            <h1 className="text-white font-display-xl leading-tight">
+            </motion.span>
+            <motion.h1 
+              className="text-white font-display-xl leading-tight"
+              variants={fadeInUp}
+            >
               Nurturing Excellence, Raising Future Leaders
-            </h1>
-            <p className="text-white/90 text-body-lg max-w-2xl">
+            </motion.h1>
+            <motion.p 
+              className="text-white/90 text-body-lg max-w-2xl"
+              variants={fadeInUp}
+            >
               Blossom High School is committed to academic excellence, character development, discipline, and innovation—preparing every child for a successful future.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            </motion.p>
+            <motion.div 
+              className="flex flex-wrap gap-4 pt-4"
+              variants={fadeInUp}
+            >
               <Link 
                 to="/admissions"
                 className="px-8 py-4 bg-tertiary-container text-white font-headline-sm rounded-xl hover:scale-[1.02] transition-transform shadow-lg"
@@ -35,41 +64,60 @@ const Home = () => {
               >
                 Book a School Tour
               </Link>
-            </div>
+            </motion.div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-xl">
-              <div className="flex items-center gap-3 text-white/90">
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-xl"
+              variants={staggerContainer}
+            >
+              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
                 <span className="material-symbols-outlined text-secondary-fixed text-3xl">school</span>
                 <span className="font-label-md">Experienced Teachers</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/90">
+              </motion.div>
+              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
                 <span className="material-symbols-outlined text-secondary-fixed text-3xl">shield_person</span>
                 <span className="font-label-md">Safe Environment</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/90">
+              </motion.div>
+              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
                 <span className="material-symbols-outlined text-secondary-fixed text-3xl">computer</span>
                 <span className="font-label-md">Modern Learning</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/90">
+              </motion.div>
+              <motion.div className="flex items-center gap-3 text-white/90" variants={staggerItem}>
                 <span className="material-symbols-outlined text-secondary-fixed text-3xl">workspace_premium</span>
                 <span className="font-label-md">Strong Moral Values</span>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
       <section className="py-xl bg-surface relative">
         <div className="max-w-container-max mx-auto px-8">
-          <div className="text-center mb-xl">
+          <motion.div 
+            className="text-center mb-xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={fadeInUp}
+          >
             <h2 className="text-primary font-display-lg mb-4">Why Parents Choose Blossom High School</h2>
             <div className="h-1.5 w-24 bg-tertiary-container mx-auto rounded-full"></div>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={staggerContainer}
+          >
             {/* Card 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-emerald-600 hover:-translate-y-2 transition-all group">
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-emerald-600 hover:-translate-y-2 transition-all group"
+              variants={staggerItem}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
               <div className="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
                 <span className="material-symbols-outlined text-3xl">trending_up</span>
               </div>
@@ -77,10 +125,14 @@ const Home = () => {
               <p className="text-on-surface-variant text-body-md">
                 A rigorous curriculum designed to challenge students and produce top-tier academic results across all levels.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-tertiary-container hover:-translate-y-2 transition-all group">
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-tertiary-container hover:-translate-y-2 transition-all group"
+              variants={staggerItem}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
               <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6 text-tertiary-container group-hover:bg-tertiary-container group-hover:text-white transition-colors">
                 <span className="material-symbols-outlined text-3xl">verified_user</span>
               </div>
@@ -88,10 +140,14 @@ const Home = () => {
               <p className="text-on-surface-variant text-body-md">
                 We believe education is incomplete without character. We instill strong ethical values in every student.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-emerald-600 hover:-translate-y-2 transition-all group">
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-emerald-600 hover:-translate-y-2 transition-all group"
+              variants={staggerItem}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
               <div className="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
                 <span className="material-symbols-outlined text-3xl">security</span>
               </div>
@@ -99,10 +155,14 @@ const Home = () => {
               <p className="text-on-surface-variant text-body-md">
                 A nurturing environment where children feel secure, respected, and empowered to express themselves.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 4 */}
-            <div className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-tertiary-container hover:-translate-y-2 transition-all group">
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-[0_10px_40px_rgba(11,93,42,0.05)] border-l-4 border-tertiary-container hover:-translate-y-2 transition-all group"
+              variants={staggerItem}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            >
               <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-6 text-tertiary-container group-hover:bg-tertiary-container group-hover:text-white transition-colors">
                 <span className="material-symbols-outlined text-3xl">lightbulb</span>
               </div>
@@ -110,8 +170,8 @@ const Home = () => {
               <p className="text-on-surface-variant text-body-md">
                 Equipping students with future-ready skills through modern technology and creative problem-solving.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -119,16 +179,28 @@ const Home = () => {
       <section className="py-xl overflow-hidden">
         <div className="max-w-container-max mx-auto px-8">
           <div className="flex flex-col lg:flex-row items-center gap-20">
-            <div className="lg:w-1/2 relative">
+            <motion.div 
+              className="lg:w-1/2 relative"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={fadeInLeft}
+            >
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary-container/20 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-tertiary-container/10 rounded-full blur-3xl"></div>
-              <img 
+              <OptimizedImage
                 className="relative z-10 rounded-xl shadow-2xl object-cover w-full h-[500px]" 
                 alt="Beautiful aerial architecture of a modern Nigerian private secondary school campus in Ibadan with lush greenery and clean academic blocks"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzpukZ04wwf14ke-qSHUvcQN7yIJEnG1ZFunNDaTUrvq4X3PeDNlF9uISxpBJeQLQSAIBN75cjsvxqTTjqLxN_t2aKnZgWMg7NL2v0gop8BsH0XOSSZICIzWPx28Oe-Wma4Cv9DGuQC0OehKHB24DK71H8_kunXThjIqsK1fdZ4SHIsUXNvo5IPvh-d1zolO6r6DR8jE-_GqpY_4B7Nvyk7Qc_eXqtdhIwUQ2WpE0Ic6EsN87d53b4I0dlX8X8aNEkP1VTqCn_"
               />
-            </div>
-            <div className="lg:w-1/2 space-y-md">
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 space-y-md"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={fadeInRight}
+            >
               <span className="text-secondary font-label-md tracking-widest uppercase">Our Heritage</span>
               <h2 className="text-primary font-display-lg">A School Built for Growth in Ibadan</h2>
               <p className="text-on-surface-variant text-body-lg">
@@ -143,7 +215,7 @@ const Home = () => {
                   <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

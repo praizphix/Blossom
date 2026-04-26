@@ -99,6 +99,123 @@ export const hoverScale = {
   }
 };
 
+// Zoom In Animation
+export const zoomIn = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }
+  }
+};
+
+// Rotate In Animation
+export const rotateIn = {
+  hidden: { opacity: 0, rotate: -10 },
+  visible: { 
+    opacity: 1, 
+    rotate: 0,
+    transition: { duration: 0.6, ease: 'easeOut' }
+  }
+};
+
+// Slide In Up with Bounce
+export const slideInUpBounce = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }
+  }
+};
+
+// Scale and Fade
+export const scaleAndFade = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { duration: 0.4, ease: 'easeOut' }
+  }
+};
+
+// Stagger Fast Container
+export const staggerFastContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.1
+    }
+  }
+};
+
+// Card Hover Animation
+export const cardHover = {
+  rest: { scale: 1, y: 0 },
+  hover: { 
+    scale: 1.02,
+    y: -8,
+    transition: { duration: 0.3, ease: 'easeOut' }
+  }
+};
+
+// Image Zoom Hover
+export const imageZoomHover = {
+  rest: { scale: 1 },
+  hover: { 
+    scale: 1.1,
+    transition: { duration: 0.6, ease: 'easeOut' }
+  }
+};
+
+// Float Animation (continuous)
+export const float = {
+  animate: {
+    y: [0, -10, 0],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: 'easeInOut'
+    }
+  }
+};
+
+// Pulse Animation (continuous)
+export const pulse = {
+  animate: {
+    scale: [1, 1.05, 1],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: 'easeInOut'
+    }
+  }
+};
+
+// Viewport animation settings for scroll-triggered animations
+export const viewportSettings = {
+  once: true,
+  margin: '0px 0px -100px 0px',
+  amount: 0.3
+};
+
+// Page transition animations
+export const pageVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.4, ease: 'easeOut' }
+  },
+  exit: { 
+    opacity: 0, 
+    y: -20,
+    transition: { duration: 0.3 }
+  }
+};
+
 // Navbar Animation
 export const navbarAnimation = {
   hidden: { y: -100, opacity: 0 },

@@ -7,6 +7,7 @@ import hero4 from '../assets/images/hero-4.jpg';
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(new Set());
 
   // Hero slides data
   const slides = [
@@ -31,6 +32,17 @@ const HeroSlider = () => {
       alt: 'Happy students enjoying their educational journey at Blossom High School',
     },
   ];
+
+  // Preload all hero images for smooth transitions
+  useEffect(() => {
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.image;
+      img.onload = () => {
+        setImagesLoaded(prev => new Set([...prev, slide.id]));
+      };
+    });
+  }, []);
 
   // Auto-play with 10 second interval
   useEffect(() => {
@@ -73,7 +85,12 @@ const HeroSlider = () => {
             className="w-full h-full object-cover" 
             alt={slide.alt}
             src={slide.image}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchpriority={index === 0 ? 'high' : 'auto'}
           />
+          {!imagesLoaded.has(slide.id) && (
+            <div className="absolute inset-0 bg-surface-container animate-pulse" />
+          )}
         </div>
       ))}
 
