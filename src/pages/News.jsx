@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { newsArticles } from '../data/newsData';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const News = () => {
   return (
+    <>
+      <SEO {...seoConfig.news} />
     <main className="pt-12 pb-24">
       {/* Hero Section */}
       <section className="max-w-container-max mx-auto px-8 mb-xl">
@@ -199,6 +203,7 @@ const News = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 

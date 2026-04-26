@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserGraduate, FaUserTie, FaChalkboardTeacher } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Portal = () => {
   const portals = [
@@ -32,6 +34,8 @@ const Portal = () => {
   ];
 
   return (
+    <>
+      <SEO {...seoConfig.portal} />
     <div className="min-h-screen bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -93,6 +97,7 @@ const Portal = () => {
         </motion.div>
       </div>
     </div>
+    </>
   );
 };
 

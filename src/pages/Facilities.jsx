@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Facilities = () => {
   return (
+    <>
+      <SEO {...seoConfig.facilities} />
     <div>
       {/* Hero Section */}
       <header className="relative pt-12 pb-20 overflow-hidden bg-white">
@@ -222,6 +226,7 @@ const Facilities = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

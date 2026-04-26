@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Curriculum = () => {
   return (
+    <>
+      <SEO {...seoConfig.curriculum} />
     <main className="pt-12 pb-24">
       {/* Breadcrumb */}
       <section className="max-w-container-max mx-auto px-8 mb-8">
@@ -296,6 +300,7 @@ const Curriculum = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 

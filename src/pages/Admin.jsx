@@ -11,6 +11,8 @@ import {
   FaTimes,
   FaSignOutAlt
 } from 'react-icons/fa';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Admin = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -153,6 +155,8 @@ const Admin = () => {
   };
 
   return (
+    <>
+      <SEO {...seoConfig.admin} />
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar */}
       <aside className={`fixed top-0 left-0 h-full bg-[#0B5D2A] text-white transition-all duration-300 z-40 ${
@@ -198,6 +202,7 @@ const Admin = () => {
         </div>
       </main>
     </div>
+    </>
   );
 };
 

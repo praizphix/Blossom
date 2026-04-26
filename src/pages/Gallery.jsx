@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import SectionTitle from '../components/SectionTitle';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
+import seoConfig from '../utils/seoConfig';
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -27,6 +29,8 @@ const Gallery = () => {
     : images.filter(img => img.category === activeCategory);
 
   return (
+    <>
+      <SEO {...seoConfig.gallery} />
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="py-32 bg-gradient-to-br from-primary to-secondary text-white">
@@ -119,6 +123,7 @@ const Gallery = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
