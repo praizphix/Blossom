@@ -73,7 +73,9 @@ const Admissions = () => {
   };
 
   return (
-    <div>
+    <>
+      <SEO {...seoConfig.admissions} />
+      <div>
       {/* Hero Section */}
       <header className="relative pt-12 pb-24 overflow-hidden bg-gradient-to-br from-primary to-secondary">
         <div className="max-w-container-max mx-auto px-8 text-center text-white">
@@ -684,7 +686,7 @@ const Admissions = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
     </>
   );
 };
