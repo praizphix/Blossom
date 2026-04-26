@@ -41,7 +41,7 @@ const Admissions = () => {
       await db.submitApplication(formData);
       setSubmitStatus({
         type: 'success',
-        message: 'Application submitted successfully! Our admissions team will contact you within 48 hours to schedule an entrance examination.'
+        message: 'Application submitted successfully! Our admissions team will contact you within 48 hours to schedule an entrance examination. For urgent inquiries, email info@bhsibadan.ng'
       });
       // Reset form
       setFormData({

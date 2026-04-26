@@ -32,7 +32,7 @@ const Contact = () => {
       await db.submitContact(formData);
       setSubmitStatus({
         type: 'success',
-        message: 'Thank you for your inquiry! We will get back to you within 24 hours.'
+        message: 'Thank you for your inquiry! Our team will respond to you within 24 hours at the email provided. You can also reach us directly at info@bhsibadan.ng'
       });
       // Reset form
       setFormData({
@@ -46,7 +46,7 @@ const Contact = () => {
       console.error('Contact submission error:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Failed to submit your inquiry. Please try again or contact us directly.'
+        message: 'Failed to submit your inquiry. Please try again or email us directly at info@bhsibadan.ng'
       });
     } finally {
       setIsSubmitting(false);
