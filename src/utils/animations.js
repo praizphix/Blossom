@@ -151,16 +151,6 @@ export const staggerFastContainer = {
   }
 };
 
-// Card Hover Animation
-export const cardHover = {
-  rest: { scale: 1, y: 0 },
-  hover: { 
-    scale: 1.02,
-    y: -8,
-    transition: { duration: 0.3, ease: 'easeOut' }
-  }
-};
-
 // Image Zoom Hover
 export const imageZoomHover = {
   rest: { scale: 1 },
